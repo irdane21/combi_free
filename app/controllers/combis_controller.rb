@@ -1,12 +1,12 @@
 class CombisController < ApplicationController
-  before_action :find_combi, only: [:edit, :update]
+  before_action :find_combi, only: [:edit, :update, :show]
 
   def index
     @combis = policy_scope(Combi)
   end
 
   def show
-    @post = policy_scope(Post).find(params[:id])
+    authorize @combi
   end
 
   def new

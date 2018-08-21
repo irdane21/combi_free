@@ -6,12 +6,16 @@ class CombiPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def new?
     create?
   end
 
   def create?
-    return true
+    true
   end
 
   def edit
