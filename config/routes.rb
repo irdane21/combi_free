@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :combis do
     resources :bookings, only: [ :new, :create, :index ]
   end
-  get '/account', to: 'accounts#dashboard'
+  get '/dashboard', to: 'accounts#dashboard'
 end

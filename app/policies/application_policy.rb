@@ -1,6 +1,4 @@
 class ApplicationPolicy
-  protect_from_forgery
-  before_action :authenticate_user!
   attr_reader :user, :record
 
   def initialize(user, record)
