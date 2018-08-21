@@ -19,11 +19,10 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'cloudinary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'dotenv-rails', groups: [:development, :test]
-  gem 'cloudinary'
 end
 
 group :development, :test do
