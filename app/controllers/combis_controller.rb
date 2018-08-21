@@ -1,7 +1,7 @@
 class CombisController < ApplicationController
   before_action :find_combi, only: [:edit, :update, :show]
   def index
-    @combis = policy_scope(Combi)
+    @combis = policy_scope(Combi).all
   end
 
   def show
