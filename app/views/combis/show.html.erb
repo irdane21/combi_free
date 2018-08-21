@@ -1,21 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path("combishow.jpeg") %>')">
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <h3>Book your combi</h3>
-        <%= simple_form_for @combi do |f| %>
-          <%= f.input :model, placeholder: 'Volswagen classic, california..' %>
-          <%= f.input :description %>
-          <%= f.input :city %>
-          <%= f.input :price %>
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
-<hr>
-<%= link_to "Back", root_path, class: "btn btn-success" %>
 
