@@ -3,8 +3,5 @@
   <div class="card-description">
     <h2><%= combi.price %></h2>
   </div>
-  <%= cl_image_path ( combi.user.photo,
-      width: 400, height: 300, crop: :fill),
-      :class => "card-user" %>
-  <%= link_to "", combi_path(combi), :class => "card-link"%>
+  <%= link_to "", combi_path(combi), class: "card-link"%>
 </div>
