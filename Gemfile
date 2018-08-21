@@ -23,6 +23,7 @@ gem 'webpacker'
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'dotenv-rails', groups: [:development, :test]
+  gem 'cloudinary'
 end
 
 group :development, :test do
