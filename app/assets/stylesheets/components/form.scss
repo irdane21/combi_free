@@ -1,0 +1,47 @@
+.flex-form {
+  display: flex;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+input[type=search] {
+  flex-basis: 400px;
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  border-radius: 4px;
+  outline: 0;
+  background: #fff;
+}
+
+.form-case {
+  display: flex;
+  justify-content: center;
+  margin: 5px 5px;
+  padding: 5px;
+}
+
+.submit {
+  font-weight: bold;
+  background-color: white;
+  color: rgb(40, 45, 48);
+  text-align: center;
+}
+
+.form-case > label {
+  color: rgb(40, 45, 48);
+  font-weight: bold;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.form-case > input {
+  color: #e4a600;
+  font-weight: lighter;
+  text-align: center;
+
+}
