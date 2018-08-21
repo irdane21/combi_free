@@ -1,0 +1,19 @@
+.main-container {
+  display: flex;
+}
+
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  background-color: yellow;
+  text-align: center;
+}
+
+.research {
+  background-color: yellow;
+  height: 200px;
+  padding: 20px;
+  width: 400px;
+}

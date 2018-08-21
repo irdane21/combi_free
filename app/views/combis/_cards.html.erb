@@ -1,0 +1,7 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= combi.photo.present? ? cl_image_path(combi.photo, crop: :fill) : image_path('logo.jpg') %>);">
+  <div class="card-category"><%= combi.model %></div>
+  <div class="card-description">
+    <h2><%= combi.price %></h2>
+  </div>
+  <%= link_to "", combi_path(combi), class: "card-link"%>
+</div>
