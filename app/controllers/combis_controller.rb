@@ -1,0 +1,2 @@
+class CombisController < ApplicationController
+end
