@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 gem 'devise'
+gem "geocoder"
+
 
 #Add pundit
 gem "pundit"
@@ -21,6 +23,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
 gem 'faker'
+gem 'carrierwave', '~> 1.2'
 
 
 group :development do
