@@ -13,14 +13,14 @@
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="reservation_card">
-          <h2>Book This Combi Now!</h2>
+          <h2>Road trip card</h2>
           <p>The date:</p>
           <p>12/08/2018</p>
           <p>Pick it up at:</p>
           <p><%= "#{@combi.address} #{@combi.city}" %></p>
           <p>For:</p>
           <p><%= @combi.price %> €</p>
-          <%= link_to "Book it!", @dashboard_path,
+          <%= link_to "Book it now!", @dashboard_path,
             class: "btn btn-primary" %>
         </div>
       </div>
