@@ -2,7 +2,7 @@
   padding-top: 60px;
 }
 .profil-container {
-  background-color: rgba(228, 166, 0, 0.3);
+  background-color: rgba(228, 166, 0, 0.2);
   width: 100%;
   border: 1px solid #D3D3D3;
   height: 300px;
@@ -24,14 +24,23 @@
   top: 2px;
   left: 10px;
 }
+.haut-droit {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+}
 
 .user-information {
   font-size: 13px;
   padding-left: 30px;
 }
 
+.marge-top {
+  margin-top: 80px;
+}
+
 .reservation-container {
-  background-color: rgba(228, 166, 0, 0.3);
+  background-color: rgba(228, 166, 0, 0.2);
   width: 100%;
   border: 1px solid #D3D3D3;
   height: 300px;
@@ -41,6 +50,13 @@
   display: flex;
 }
 
+.display-in-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
 .booking {
 
 }
@@ -48,10 +64,10 @@
 
 
 .combi-container {
-  background-color: rgba(228, 166, 0, 0.3);
+  background-color: rgba(228, 166, 0, 0.2);
   width: 100%;
   border: 1px solid #D3D3D3;
-  height: 300px;
+  height-min: 300px;
   border-radius: 5px;
   margin: 20px;
   position: relative;

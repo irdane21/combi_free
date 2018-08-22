@@ -22,13 +22,14 @@
   </div>
   <div class="combi-container">
     <h3 class="haut-gauche">Combis:</h3>
-    <ul>
+    <%= link_to "Add a combi", new_combi_path(current_user), class: "btn btn-success haut-droit"%>
+    <ul class="marge-top">
       <% current_user.combis.each do |combi| %>
         <li class="display-in-line">
-          <%= cl_image_path combi.photo, height: 150, width: 200, crop: :fill %>
+          <%= cl_image_tag combi.photo, height: 150, width: 200, crop: :fill %>
           <div class="identify-combi">
             <%= combi.model %>
-            <%= combi.desciption %>
+            <%= combi.description %>
             <%= combi.price %>
           </div>
           <%= link_to "Edit your combi", edit_combi_path(combi), class: "btn btn-warning"%>
