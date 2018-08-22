@@ -1,12 +1,12 @@
 .main-container {
   display: flex;
+  margin-top: 25px;
 }
 
 #map {
   flex: 0 0 450px;
-  height: 100vh;
   position: sticky !important;
-  top: 0 !important;
+  height: calc(100vh - 70px);
   background-color: yellow;
   text-align: center;
 }
@@ -15,5 +15,9 @@
   background-color: yellow;
   height: 200px;
   padding: 20px;
-  width: 400px;
+  width: 100%;
+}
+
+.content {
+  flex-grow: 1;
 }

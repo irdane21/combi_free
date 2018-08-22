@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 gem 'devise'
+gem "geocoder"
+
 
 #Add pundit
 gem "pundit"

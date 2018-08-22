@@ -1,7 +1,17 @@
 class CombisController < ApplicationController
   before_action :find_combi, only: [:edit, :update, :show]
   def index
-    @combis = policy_scope(Combi).all
+    @combis = policy_scope(Combi)
+
+    # @combis = Combi
+
+    @markers = @combis.map do |combi|
+      {
+        lat: combi.latitude,
+        lng: combi.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/combis/map_box", locals: { combi: combi }) }
+      }
+    end
   end
 
   def show
