@@ -2,7 +2,9 @@ class CombisController < ApplicationController
   before_action :find_combi, only: [:edit, :update, :show]
   def index
     @combis = policy_scope(Combi)
-
+    if params && params[:search]
+      @combis = Combi.near(params[:search], 20)
+    end
     # @combis = Combi
 
     @markers = @combis.map do |combi|
