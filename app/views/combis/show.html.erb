@@ -1,21 +1,32 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path("combishow.jpeg") %>')">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= image_path("combishow.jpeg") %>')">
 </div>
 
 <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <h3>Book your combi</h3>
-        <%= simple_form_for @combi do |f| %>
-          <%= f.input :model, placeholder: 'Volswagen classic, california..' %>
-          <%= f.input :description %>
-          <%= f.input :city %>
-          <%= f.input :price %>
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="combi_info">
+          <h3>Model: <%= @combi.model %></h3>
+          <p><%= @combi.description %></p>
+          <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
+          <h3>Price per day: <%= @combi.price %> €</h3>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="reservation_card">
+          <h2>Road trip card</h2>
+          <!-- A modifier avec la recherche-->
+          <p>The date:</p>
+          <p>12/08/2018</p>
+          <p>Address:</p>
+          <p><%= "#{@combi.address} #{@combi.city}" %></p>
+          <p>For:</p>
+          <p><%= @combi.price %> €</p>
+          <%= link_to "Book it now!", @dashboard_path,
+            class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
   </div>
 
-<hr>
-<%= link_to "Back", root_path, class: "btn btn-success" %>
+
 
