@@ -11,7 +11,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <a href="" class="navbar-combi-item navbar-combi-link">Share a combi</a>
+      <%= link_to "Rent my combi", new_combi_path, class: "navbar-combi-item navbar-combi-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
