@@ -18,10 +18,12 @@
           <p>The date:</p>
           <p>12/08/2018</p>
           <p>Address:</p>
-          <p><%= "#{@combi.address} #{@combi.city}" %></p>
+          <p>
+            <%= "#{@combi.address} #{@combi.city}" %>
+          </p>
           <p>For:</p>
           <p><%= @combi.price %> €</p>
-          <%= link_to "Book it now!", @dashboard_path,
+          <%= link_to "Book it now!", dashboard_path,
             class: "btn btn-primary" %>
         </div>
       </div>

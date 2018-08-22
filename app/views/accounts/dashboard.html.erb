@@ -1,1 +1,40 @@
-<h3>Hello</h3>
+<div class="container">
+  <div class="profil-container">
+    <h3 class="haut-gauche">Profil:</h3>
+    <div class="user-information">
+      <h3>
+        Je suis la desciption
+        <%= current_user.first_name %>
+        <%= current_user.last_name %>
+      </h3>
+      <p><%= current_user.email %></p>
+    </div>
+    <div class="modify-profil">
+      <%= link_to "Update your profil", edit_user_registration_path(@current_user), class: "btn btn-warning"%>
+    </div>
+  </div>
+
+  <div class="reservation-container">
+    <h3 class="haut-gauche">Booking:</h3>
+    <div class="booking">
+
+    </div>
+  </div>
+  <div class="combi-container">
+    <h3 class="haut-gauche">Combis:</h3>
+    <ul>
+      <% current_user.combis.each do |combi| %>
+        <li class="display-in-line">
+          <%= cl_image_path combi.photo, height: 150, width: 200, crop: :fill %>
+          <div class="identify-combi">
+            <%= combi.model %>
+            <%= combi.desciption %>
+            <%= combi.price %>
+          </div>
+          <%= link_to "Edit your combi", edit_combi_path(combi), class: "btn btn-warning"%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
