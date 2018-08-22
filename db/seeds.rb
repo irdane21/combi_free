@@ -10,6 +10,12 @@ require 'faker'
 Combi.destroy_all
 User.destroy_all
 
+cities = %w(Bordeaux Lille Lyon Marseille Paris)
+streets = [
+  "rue du général de gaulle",
+  "grand place"
+]
+
 standard_user = User.create!(email: 'toto@toto.fr', password: 'password')
 
 10.times do
@@ -20,8 +26,8 @@ standard_user = User.create!(email: 'toto@toto.fr', password: 'password')
    user: standard_user,
    lat: Faker::Address.latitude.to_i,
    lng: Faker::Address.longitude.to_i,
-   address: Faker::Address.street_address,
-   city: Faker::Address.city,
+   address: "#{rand(1..40)} #{streets.sample}",
+   city: cities.sample,
    #postal_code: Faker::Address.zip_code,
    #country: Faker::Address.country
  )
