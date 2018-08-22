@@ -15,11 +15,13 @@ class CombisController < ApplicationController
 
   def create
     @combi = Combi.new(params_combi)
+    @combi.user = current_user
     authorize @combi
     if @combi.save
       redirect_to combi_path(@combi)
     else
-      render new
+      # fail
+      render :new
     end
   end
 
@@ -43,6 +45,6 @@ class CombisController < ApplicationController
   end
 
   def params_combi
-    params.require(:combi).permit(:model, :description, :price, :lat, :lgn, :address, :city, :photo)
+    params.require(:combi).permit(:model, :description, :price, :lat, :lgn, :address, :city, :photo, :photo_cache)
   end
 end
