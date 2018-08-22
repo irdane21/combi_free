@@ -5,18 +5,19 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="combi_info">
-          <h3><%= @combi.model %></h3>
+          <h3>Model: <%= @combi.model %></h3>
           <p><%= @combi.description %></p>
-          <p><%= "#{@combi.address} #{@combi.city}" %></p>
-          <h3><%= @combi.price %> €</h3>
+          <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
+          <h3>Price per day: <%= @combi.price %> €</h3>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="reservation_card">
           <h2>Road trip card</h2>
+          <!-- A modifier avec la recherche-->
           <p>The date:</p>
           <p>12/08/2018</p>
-          <p>Pick it up at:</p>
+          <p>Address:</p>
           <p><%= "#{@combi.address} #{@combi.city}" %></p>
           <p>For:</p>
           <p><%= @combi.price %> €</p>
