@@ -2,12 +2,15 @@
   <div class="profil-container">
     <h3 class="haut-gauche">User profil:</h3>
     <div class="user-information">
-      <h3>
-         User details :
+      <h4>
+         Name :
         <%= current_user.first_name %>
         <%= current_user.last_name %>
-      </h3>
-      <p><%= current_user.email %></p>
+      </h4>
+      <h4>
+        Mail :
+        <%= current_user.email %>
+        </h4>
     </div>
     <div class="modify-profil">
       <%= link_to "Update your profil", edit_user_registration_path(@current_user), class: "btn btn-warning"%>

@@ -17,10 +17,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <div class="main">
-      <% if notice || alert  %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      <% end %>
+    <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
