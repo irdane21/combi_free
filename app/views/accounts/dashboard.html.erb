@@ -21,28 +21,30 @@
     <h3 class="haut-gauche">Booking:</h3>
     <div class="booking">
       <h3>The combi that you want book:</h3>
-      <ul class="marge-top">
+      <ul class="no_padding_inline">
         <% @bookings.each do |booking| %>
           <li class="display-in-line">
             <div class="combi-model">
               <%= booking.combi.model %>
             </div>
             <div class="combi_price">
-              <%= booking.price %>
+              <p><%= booking.price %> €</p>
             </div>
             <div class="state_of_reservation">
               <%= booking.status %>
             </div>
-            <% if booking.status == "Accepted" %>
-              <%= link_to "Review the combi", "bookings/#{booking.id}/review", class: "btn btn-success"%>
-            <% end %>
+            <div class="review-div">
+              <% if booking.status == "Accepted" %>
+                <%= link_to "Review the combi", "bookings/#{booking.id}/review", class: "btn btn-success"%>
+              <% end %>
+            </div>
           </li>
         <% end %>
       </ul>
     </div>
     <div class="booking">
       <h3>They wants rent your combi:</h3>
-      <ul class="marge-top">
+      <ul class="no_padding_inline">
         <% current_user.combis.each do |combi| %>
           <% combi.bookings.each do |booking| %>
             <li class="display-in-line">
@@ -59,10 +61,12 @@
                 <%= booking.begin_date %>
                 <%= booking.end_date %>
               </div>
-              <% if booking.status == "Wait for confirmation" %>
-                <%= link_to "Accepted", "bookings/#{booking.id}/validate", class: "btn btn-success"%>
-                <%= link_to "Refuse", "bookings/#{booking.id}/refused", class: "btn btn-danger"%>
+              <div class="button-action">
+                <% if booking.status == "Wait for confirmation" %>
+                  <%= link_to "Accepted", "bookings/#{booking.id}/validate", class: "btn btn-success"%>
+                  <%= link_to "Refuse", "bookings/#{booking.id}/refused", class: "btn btn-danger"%>
                 <% end %>
+              </div>
             </li>
           <% end %>
         <% end %>
