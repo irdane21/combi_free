@@ -21,13 +21,13 @@ class BookingsController < ApplicationController
 
   def review
     @booking = Booking.find(params[:id])
-    authorize @combi
+    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
     authorize @booking
-    if @booking.update(params_booking)
+    if @booking.save(booking_params)
       redirect_to dashboard_path
     else
       render :review
@@ -35,15 +35,25 @@ class BookingsController < ApplicationController
   end
 
   def validate
-    @booking = Booking.new(booking_params)
+    @booking = Booking.find(params[:id])
     @booking.status = 1
-    redirect_to dashboard_path
+    authorize @booking
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      alert = 'Something went wrong, please retry'
+    end
   end
 
   def refused
-    @booking = Booking.new(booking_params)
+    @booking = Booking.find(params[:id])
     @booking.status = 2
-    redirect_to dashboard_path
+    authorize @booking
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      alert = 'Something went wrong, please retry'
+    end
   end
 
   def destroy

@@ -31,7 +31,7 @@
               <%= booking.status %>
             </div>
             <% if booking.status == "Accepted" %>
-              <%= link_to "Review the combi", dashboard_path, class: "btn btn-success"%>
+              <%= link_to "Review the combi", "bookings/#{booking.id}/review", class: "btn btn-success"%>
             <% end %>
           </li>
         <% end %>
@@ -52,8 +52,14 @@
               <div class="state_of_reservation">
                 <%= booking.status %>
               </div>
-              <%= link_to "Accept", validate_path(booking), class: "btn btn-success"%>
-              <%= link_to "Refuse", refused_path(booking), class: "btn btn-danger"%>
+              <div class="date">
+                <%= booking.begin_date %>
+                <%= booking.end_date %>
+              </div>
+              <% if booking.status == "Wait for confirmation" %>
+                <%= link_to "Accepted", "bookings/#{booking.id}/validate", class: "btn btn-success"%>
+                <%= link_to "Refuse", "bookings/#{booking.id}/refused", class: "btn btn-danger"%>
+                <% end %>
             </li>
           <% end %>
         <% end %>
