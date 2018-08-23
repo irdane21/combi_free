@@ -79,13 +79,17 @@
     <ul class="marge-top">
       <% current_user.combis.each do |combi| %>
         <li class="display-in-line">
-          <%= cl_image_tag combi.photo, height: 150, width: 200, crop: :fill %>
+          <div class="combi_image">
+            <%= cl_image_tag combi.photo, height: 150, width: 200, crop: :fill %>
+          </div>
           <div class="identify-combi">
             <%= combi.model %>
             <%= combi.description %>
             <%= combi.price %>
           </div>
-          <%= link_to "Edit your combi", edit_combi_path(combi), class: "btn btn-warning"%>
+          <div class="button_edit">
+            <%= link_to "Edit your combi", edit_combi_path(combi), class: "btn btn-warning"%>
+          </div>
         </li>
       <% end %>
     </ul>

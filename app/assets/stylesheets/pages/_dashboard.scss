@@ -46,7 +46,6 @@
   margin-top: 80px;
 }
 
-
 .reservation-container {
   background-color: rgba(228, 166, 0, 0.1);
   width: 100%;
@@ -122,5 +121,21 @@
 .button-action {
   width: 250px;
   padding: 20px;
+}
+.identify-combi {
+  flex-grow: 1;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  padding: 20px;
+  border-color: white;
+  margin: 30px;
+}
 
+.button_edit {
+  width: 200px;
+  padding: 20px;
+}
+
+.combi_image {
+  padding: 20px;
 }
