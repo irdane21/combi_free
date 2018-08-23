@@ -8,28 +8,35 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8">
         <div class="combi_info">
-          <div class="model">
-            <h3>Model:<%= @combi.model %></h3>
-          </div>
-          <div class="description">
-            <p><%= @combi.description %></p>
-          </div>
+          <h3>Model: <%= @combi.model %></h3>
+          <p><%= @combi.description %></p>
+          <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
+          <h3>Price per day: <%= @combi.price %> €</h3>
+          <% @combi.bookings.each do |booking| %>
+            <h4>
+              <%= booking.review_title%>
+            </h4>
+            <p> <%= booking.review_content %></p>
+            <p> <%= booking.review_rating %></p>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="reservation_card">
           <h3>Combi road trip</h3>
           <!-- A modifier avec la recherche-->
-          <p>Booking date:</p>
-          <h5>12/08/2018</h5>
-          <p>Address pick up:</p>
-          <h5>
+          <p>Address:</p>
+          <p>
             <%= "#{@combi.address} #{@combi.city}" %>
-          </h5>
-          <p>Price per day:</p>
-          <h5><%= @combi.price %> €</h5>
-          <%= link_to "Book it now!", dashboard_path,
-            class: "btn btn-primary" %>
+          </p>
+          <p>For:</p>
+          <p><%= @combi.price %> €</p>
+          <p>Date:</p>
+          <%= form_tag [@combi, @booking], method: :post do %>
+            <input type="date" name="begin_date">
+            <input type="date" name="end_date">
+            <%= submit_tag ("Book it NOW!") %>
+          <% end %>
         </div>
       </div>
     </div>

@@ -43,11 +43,10 @@
   background-color: rgba(228, 166, 0, 0.2);
   width: 100%;
   border: 1px solid #D3D3D3;
-  height: 300px;
+  height-min: 300px;
   border-radius: 5px;
   margin: 20px;
   position: relative;
-  display: flex;
 }
 
 .display-in-line {
@@ -58,7 +57,22 @@
 }
 
 .booking {
+  margin: 80px;
+}
 
+.combi-model {
+  width-min: 100px;
+}
+
+.combi_price {
+  width-min: 100px;
+}
+
+.state_of_reservation {
+  width-min: 100px;
+  border: 1px solid;
+  border-color: orange;
+  padding: 20px;
 }
 
 

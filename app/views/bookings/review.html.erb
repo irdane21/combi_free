@@ -1,0 +1,6 @@
+<%= simple_form_for(@booking, method: :patch) do |f| %>
+  <%= f.input :review_title %>
+  <%= f.input :review_content %>
+  <%= f.input :review_rating, collection: 0..5 %>
+  <%= f.button :submit %>
+<% end %>
