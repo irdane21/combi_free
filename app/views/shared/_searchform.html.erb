@@ -1,6 +1,6 @@
 <%= form_tag(combis_path, method: :get) do %>
-  <%= text_field_tag(:search, params[:search], placeholder:' please enter city..', class: "search") %>
-  <input type="date" name="begin_date">
-  <input type="date" name="end_date">
-  <%= submit_tag ("search") %>
+  <%= text_field_tag(:search, params[:search], placeholder:' please enter city..', class: "search btn btn-ligth") %>
+  <input type="date" name="begin_date" class="btn btn-ligth">
+  <input type="date" name="end_date" class="btn btn-ligth">
+  <%= submit_tag ("Drive a combi"), class: 'btn btn-primary' %>
 <% end %>
