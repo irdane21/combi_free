@@ -14,7 +14,7 @@ class  BookingPolicy < ApplicationPolicy
     true
   end
 
-  def edit
+  def review?
     update?
   end
 

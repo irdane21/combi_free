@@ -12,6 +12,13 @@
           <p><%= @combi.description %></p>
           <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
           <h3>Price per day: <%= @combi.price %> €</h3>
+          <% @combi.bookings.each do |booking| %>
+            <h4>
+              <%= booking.review_title%>
+            </h4>
+            <p> <%= booking.review_content %></p>
+            <p> <%= booking.review_rating %></p>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">

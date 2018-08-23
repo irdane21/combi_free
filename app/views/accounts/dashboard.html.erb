@@ -52,8 +52,8 @@
               <div class="state_of_reservation">
                 <%= booking.status %>
               </div>
-              <%= link_to "Accept", edit_combi_path(booking.combi), class: "btn btn-success"%>
-              <%= link_to "Refuse", edit_combi_path(booking.combi), class: "btn btn-danger"%>
+              <%= link_to "Accept", validate_path(booking), class: "btn btn-success"%>
+              <%= link_to "Refuse", refused_path(booking), class: "btn btn-danger"%>
             </li>
           <% end %>
         <% end %>

@@ -19,9 +19,30 @@ class BookingsController < ApplicationController
     end
   end
 
+  def review
+    @booking = Booking.find(params[:id])
+    authorize @combi
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(params_booking)
+      redirect_to dashboard_path
+    else
+      render :review
+    end
+  end
+
   def validate
     @booking = Booking.new(booking_params)
-    @booking.status = true
+    @booking.status = 1
+    redirect_to dashboard_path
+  end
+
+  def refused
+    @booking = Booking.new(booking_params)
+    @booking.status = 2
     redirect_to dashboard_path
   end
 
@@ -33,7 +54,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.permit(:begin_date, :end_date)
+    params.permit(:begin_date, :end_date, :review_title, :review_content, :review_rating)
   end
 
 end
