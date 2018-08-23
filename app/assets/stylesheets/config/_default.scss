@@ -1,0 +1,27 @@
+@import "colors";
+@import "fonts";
+
+h1, h2, h3, h4, h5 {
+  font-family: $headers-font;
+}
+
+p {
+  font-family: $body-font;
+  color: #3B444D
+}
+
+h1 {
+  color: $yellow;
+}
+
+h2, h3 {
+  color: $red;
+}
+
+h4 {
+  color: $green;
+}
+
+h5 {
+  color: $blue;
+}
