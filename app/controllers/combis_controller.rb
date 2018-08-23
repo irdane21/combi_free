@@ -18,6 +18,7 @@ class CombisController < ApplicationController
 
   def show
     authorize @combi
+    @booking = Booking.new
   end
 
   def new
