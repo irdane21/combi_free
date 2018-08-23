@@ -2,8 +2,7 @@
   <%= f.input :model, placeholder: 'Volswagen classic, california..' %>
   <%= f.input :description %>
   <%= f.input :address, input_html: { class: "search" } %>
-  <%= f.input :city %>
-  <%= f.input :price %>
+  <%= f.input :price, placeholder: 'Price per night' %>
   <%= f.input :photo, placeholder: 'Upload nice photo of your combi' %>
   <%= f.error_notification message: 'Something went wrong' %>
   <%= f.input :photo_cache, as: :hidden %>
