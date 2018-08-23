@@ -1,21 +1,25 @@
-<div class="main-container">
-  <div class="content">
-    <div class="research">
-      <h2>Research</h2>
-      <%= render '/shared/searchform' %>
-    </div>
-    <div class="row">
-      <% @combis.each do |combi| %>
-        <div class="col-xs-12 col-sm-6 col-lg-4">
-          <%= render 'cards', combi: combi %>
+<div class="white-wrapper">
+  <div class="main-container">
+    <div class="content">
+      <div class="research">
+        <h2>Find your perfect combi</h2>
+        <%= render '/shared/searchform' %>
+      </div>
+      <div class= "cards-container">
+        <div class="row">
+          <% @combis.each do |combi| %>
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+              <%= render 'cards', combi: combi %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
   </div>
-  <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
 </div>
 
 <%= render 'shared/footer' %>

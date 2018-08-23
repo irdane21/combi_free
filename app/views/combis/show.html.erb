@@ -1,33 +1,38 @@
-<% if @combi && @combi.photo_url %>
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url(<%= cl_image_path @combi.photo %>)">
 
+<% if @combi && @combi.photo_url %>
+  <div class="banner" style="background-image: url(<%= cl_image_path @combi.photo %>)">
   </div>
 <% end %>
-
-<div class="container">
+<div class="white-wrapper">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-8">
         <div class="combi_info">
-          <h3>Model:
-            <%= @combi.model %></h3>
-          <h4><%= @combi.description %></h4>
+          <div class="model">
+            <h3>Model:<%= @combi.model %></h3>
+          </div>
+          <div class="description">
+            <p><%= @combi.description %></p>
+          </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-4">
         <div class="reservation_card">
-          <h2>Combi road trip</h2>
+          <h3>Combi road trip</h3>
           <!-- A modifier avec la recherche-->
           <p>Booking date:</p>
-          <p>12/08/2018</p>
+          <h5>12/08/2018</h5>
           <p>Address pick up:</p>
-          <p>
+          <h5>
             <%= "#{@combi.address} #{@combi.city}" %>
-          </p>
+          </h5>
           <p>Price per day:</p>
-          <p><%= @combi.price %> €</p>
+          <h5><%= @combi.price %> €</h5>
           <%= link_to "Book it now!", dashboard_path,
             class: "btn btn-primary" %>
         </div>
       </div>
     </div>
   </div>
+</div>
+<%= render 'shared/footer' %>
