@@ -8,23 +8,22 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="combi_info">
-          <h3>Model: <%= @combi.model %></h3>
-          <p><%= @combi.description %></p>
-          <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
-          <h3>Price per day: <%= @combi.price %> €</h3>
+          <h3>Model:
+            <%= @combi.model %></h3>
+          <h4><%= @combi.description %></h4>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="reservation_card">
-          <h2>Road trip card</h2>
+          <h2>Combi road trip</h2>
           <!-- A modifier avec la recherche-->
-          <p>The date:</p>
+          <p>Booking date:</p>
           <p>12/08/2018</p>
-          <p>Address:</p>
+          <p>Address pick up:</p>
           <p>
             <%= "#{@combi.address} #{@combi.city}" %>
           </p>
-          <p>For:</p>
+          <p>Price per day:</p>
           <p><%= @combi.price %> €</p>
           <%= link_to "Book it now!", dashboard_path,
             class: "btn btn-primary" %>
