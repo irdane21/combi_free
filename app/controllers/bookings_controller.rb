@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  require 'date'
 
   def show
     @booking = Booking.find(params[:id])
@@ -8,6 +9,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @combi = Combi.find(params[:combi_id])
     @booking.combi = @combi
+    start = @booking.begin_date
+    last = @booking.end_date
+    # @booking.price = ((last - start).to_i * @combi.price )
     @booking.price = @combi.price
     @booking.user = current_user
     authorize @booking
@@ -26,8 +30,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    @booking.review_title = params[:booking][:review_title]
+    @booking.review_content = params[:booking][:review_content]
+    @booking.review_rating = params[:booking][:review_rating]
     authorize @booking
-    if @booking.save(booking_params)
+    if @booking.save
       redirect_to dashboard_path
     else
       render :review

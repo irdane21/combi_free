@@ -1,4 +1,4 @@
-<%= simple_form_for(@booking, method: :patch, url:"/bookings/#{@booking.id}/update") do |f| %>
+<%= simple_form_for(@booking, method: :patch) do |f| %>
   <%= f.input :review_title %>
   <%= f.input :review_content %>
   <%= f.input :review_rating, collection: 0..5 %>
