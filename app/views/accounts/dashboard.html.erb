@@ -1,101 +1,110 @@
-<div class="container">
-  <div class="profil-container">
-    <div class="profil_avatar_photo">
-      <%= cl_image_tag(current_user.photo,
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
-    </div>
-    <div class="user-information">
-      <h4>
-         Name :
-        <%= current_user.first_name %>
-        <%= current_user.last_name %>
-      </h4>
-      <h4>
-        Mail :
-        <%= current_user.email %>
-        </h4>
-    </div>
-    <div class="modify-profil">
-      <%= link_to "Update your profil", edit_user_registration_path(@current_user), class: "btn btn-warning"%>
-    </div>
-  </div>
 
-  <div class="reservation-container">
-    <h3 class="haut-gauche">Booking:</h3>
-    <div class="booking">
-      <h3>The combi that you want book:</h3>
-      <ul class="no_padding_inline">
-        <% @bookings.each do |booking| %>
-          <li class="display-in-line">
-            <div class="combi-model">
-              <%= booking.combi.model %>
-            </div>
-            <div class="combi_price">
-              <p><%= booking.price %> €</p>
-            </div>
-            <div class="state_of_reservation">
-              <%= booking.status %>
-            </div>
-            <div class="review-div">
-              <% if booking.status == "Accepted" %>
-                <%= link_to "Review the combi", "bookings/#{booking.id}/review", class: "btn btn-success"%>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+<div class="wrapper">
+  <div class="container">
+    <div class="profil-container">
+      <div class="profil_avatar_photo">
+        <%= cl_image_tag(current_user.photo,
+        width: 150, height: 150, crop: :thumb, gravity: :face) %>
+      </div>
+      <div class="user-information">
+        <h4 id="profil">
+           Name :
+          <%= current_user.first_name %>
+          <%= current_user.last_name %>
+        </h4>
+        <h4 id="profil">
+          Mail :
+          <%= current_user.email %>
+          </h4>
+      </div>
+      <div class="modify-profil">
+        <%= link_to "Update your profil", edit_user_registration_path(@current_user), class: "btn btn-success"%>
+      </div>
     </div>
-    <div class="booking">
-      <h3>They wants rent your combi:</h3>
-      <ul class="no_padding_inline">
-        <% current_user.combis.each do |combi| %>
-          <% combi.bookings.each do |booking| %>
+
+    <div class="reservation-container">
+      <div class="booking">
+        <h3>Your bookings:</h3>
+        <ul class="no_padding_inline">
+          <% @bookings.each do |booking| %>
             <li class="display-in-line">
               <div class="combi-model">
                 <%= booking.combi.model %>
               </div>
               <div class="combi_price">
-                <%= booking.price %>
+                <p><%= booking.price %> €</p>
               </div>
               <div class="state_of_reservation">
                 <%= booking.status %>
               </div>
               <div class="date">
-                <%= booking.begin_date %>
-                <%= booking.end_date %>
+                <p>Start at:</p>
+                <p><%= booking.begin_date %></p>
+                <p>Finish at:</p>
+                <p><%= booking.end_date %></p>
               </div>
-              <div class="button-action">
-                <% if booking.status == "Wait for confirmation" %>
-                  <%= link_to "Accepted", "bookings/#{booking.id}/validate", class: "btn btn-success"%>
-                  <%= link_to "Refuse", "bookings/#{booking.id}/refused", class: "btn btn-danger"%>
+              <div class="review-div">
+                <% if booking.status == "Accepted" %>
+                  <%= link_to "Review the combi", "bookings/#{booking.id}/review", class: "btn btn-success"%>
                 <% end %>
               </div>
             </li>
           <% end %>
+        </ul>
+      </div>
+      <div class="booking">
+        <h3>Your combi's booking:</h3>
+        <ul class="no_padding_inline">
+          <% current_user.combis.each do |combi| %>
+            <% combi.bookings.each do |booking| %>
+              <li class="display-in-line" data-booking-id="<%= booking.id %>">
+                <div class="combi-model">
+                  <%= booking.combi.model %>
+                </div>
+                <div class="combi_price">
+                  <%= booking.price %>
+                </div>
+                <div class="state_of_reservation">
+                  <%= booking.status %>
+                </div>
+                <div class="date">
+                  <p>Start at:</p>
+                  <p><%= booking.begin_date %></p>
+                  <p>Finish at:</p>
+                  <p><%= booking.end_date %></p>
+                </div>
+                <div class="button-action">
+                  <% if booking.status == "Wait for confirmation" %>
+                    <%= link_to "Accepted", "bookings/#{booking.id}/validate", class: "btn btn-success", remote: true %>
+                    <%= link_to "Refuse", "bookings/#{booking.id}/refused", class: "btn btn-danger", remote: true %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="combi-container">
+      <h3 class="haut-gauche">Combis:</h3>
+      <%= link_to "Add a combi", new_combi_path(current_user), class: "btn btn-success haut-droit"%>
+      <ul class="marge-top">
+        <% current_user.combis.each do |combi| %>
+          <li class="display-in-line">
+            <div class="combi_image">
+              <%= cl_image_tag combi.photo, height: 150, width: 200, crop: :fill %>
+            </div>
+            <div class="identify-combi">
+              <%= combi.model %>
+              <%= combi.description %>
+              <%= combi.price %>
+            </div>
+            <div class="button_edit">
+              <%= link_to "Edit your combi", edit_combi_path(combi), class: "btn btn-success"%>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div>
   </div>
-  <div class="combi-container">
-    <h3 class="haut-gauche">Combis:</h3>
-    <%= link_to "Add a combi", new_combi_path(current_user), class: "btn btn-success haut-droit"%>
-    <ul class="marge-top">
-      <% current_user.combis.each do |combi| %>
-        <li class="display-in-line">
-          <div class="combi_image">
-            <%= cl_image_tag combi.photo, height: 150, width: 200, crop: :fill %>
-          </div>
-          <div class="identify-combi">
-            <%= combi.model %>
-            <%= combi.description %>
-            <%= combi.price %>
-          </div>
-          <div class="button_edit">
-            <%= link_to "Edit your combi", edit_combi_path(combi), class: "btn btn-warning"%>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
 </div>
-

@@ -15,13 +15,21 @@ h1 {
 }
 
 h2, h3 {
-  color: $red;
+  color: $gray;
 }
 
 h4 {
-  color: $green;
+  color: $gray;
 }
 
 h5 {
   color: $blue;
+}
+
+label {
+  color: $white;
+}
+
+small {
+  color: $black;
 }

@@ -12,13 +12,6 @@
           <p><%= @combi.description %></p>
           <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
           <h3>Price per day: <%= @combi.price %> €</h3>
-          <% @combi.bookings.each do |booking| %>
-            <h4>
-              <%= booking.review_title%>
-            </h4>
-            <p> <%= booking.review_content %></p>
-            <p> <%= booking.review_rating %></p>
-          <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
@@ -37,6 +30,29 @@
             <input type="date" name="end_date">
             <%= submit_tag ("Book it NOW!") %>
           <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <div class="combi_review">
+          <h3>Reviews:</h3>
+          <ul class="without_deco">
+            <% @combi.bookings.each do |booking| %>
+              <li class="border_around">
+                <div class="display-in-line">
+                  <div class="review_title">
+                    <%= booking.review_title%>
+                  </div>
+                  <div class="review_rating">
+                    <%= booking.review_rating %>
+                  </div>
+                </div>
+                <div class="review_content">
+                  <%= booking.review_content %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+
         </div>
       </div>
     </div>

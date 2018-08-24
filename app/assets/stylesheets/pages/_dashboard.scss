@@ -2,8 +2,21 @@
   padding-top: 60px;
 }
 
+.container p {
+  font-size: 12px;
+  color: #677787;
+}
+
+.wrapper {
+  background-color: rgb(240, 240, 240);
+}
+
+#profil {
+  color: $gray;
+}
+
 .profil-container {
-  background-color: rgba(228, 166, 0, 0.1);
+  background-color: white;
   width: 80%;
   border: 1px solid #D3D3D3;
   min-height: 150px;
@@ -29,7 +42,7 @@
 
 .haut-gauche {
   position: absolute;
-  top: 2px;
+  top: 10px;
   left: 10px;
 }
 .haut-droit {
@@ -51,7 +64,7 @@
 }
 
 .reservation-container {
-  background-color: rgba(228, 166, 0, 0.1);
+  background-color: white;
   width: 100%;
   border: 1px solid #D3D3D3;
   height-min: 300px;
@@ -66,7 +79,7 @@
   align-items: center;
   padding: 20px;
   border: 2px solid;
-  border-color: white;
+  border-color: $light-gray;
   border-radius: 5px;
   margin: 10px
 }
@@ -76,10 +89,10 @@
 }
 
 .date {
-  width: 100px;
+  width: 140px;
   border-right: 2px solid;
   padding: 20px;
-  border-color: white;
+  border-color: $light-gray;
 }
 
 
@@ -87,14 +100,14 @@
   width: 200px;
   border-right: 2px solid;
   padding: 20px;
-  border-color: white;
+  border-color: $light-gray;
 }
 
 .combi_price {
   width: 100px;
   border-right: 2px solid;
   padding: 20px;
-  border-color: white;
+  border-color: $light-gray;
 }
 
 .review-div {
@@ -109,14 +122,14 @@
   padding: 20px;
   border-right: 2px solid;
   padding: 20px;
-  border-color: white;
+  border-color: $light-gray;
 }
 
 .combi-container {
-  background-color: rgba(228, 166, 0, 0.1);
+  background-color: white;
   width: 100%;
   border: 1px solid #D3D3D3;
-  height-min: 300px;
+  min-height: 200px;
   border-radius: 5px;
   margin: 20px;
   position: relative;
@@ -131,7 +144,7 @@
   border-right: 2px solid;
   border-left: 2px solid;
   padding: 20px;
-  border-color: white;
+  border-color: $light-gray;
   margin: 30px;
 }
 
