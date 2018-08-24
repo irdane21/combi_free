@@ -1,12 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <%= image_tag "combivacs.jpg", class: "image" %>
-    </div>
-    <div class="col-xs-6">
-        <h2>Add a new coombi</h2>
-        <%= render 'form', combi: @combi %>
+<div class="image-ground" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path("combishow.jpg") %>')">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+          <h2 id="new-title">Add a combi</h2>
+          <%= render 'form', combi: @combi %>
+        </div>
       </div>
-    </div>
   </div>
 </div>
