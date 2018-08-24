@@ -13,6 +13,29 @@
           <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
           <h4>Price per day: <%= @combi.price %> €</h4>
         </div>
+        <div class="combi_review">
+          <h4>Reviews:</h4>
+          <ul class="without_deco">
+            <% @combi.bookings.each do |booking| %>
+              <% if booking.review_content %>
+                <li class="border_around">
+                  <div class="display-in-line">
+                    <div class="review_title">
+                      <%= booking.review_title%>
+                    </div>
+                    <div class="review_rating">
+                      <%= booking.review_rating %>
+                    </div>
+                  </div>
+                  <div class="review_content">
+                    <%= booking.review_content %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+
+        </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="reservation_card">
@@ -31,29 +54,6 @@
             <hr>
             <%= submit_tag "Book it NOW!", class: "btn btn-success" %>
           <% end %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-8">
-        <div class="combi_review">
-          <h4>Reviews:</h4>
-          <ul class="without_deco">
-            <% @combi.bookings.each do |booking| %>
-              <li class="border_around">
-                <div class="display-in-line">
-                  <div class="review_title">
-                    <%= booking.review_title%>
-                  </div>
-                  <div class="review_rating">
-                    <%= booking.review_rating %>
-                  </div>
-                </div>
-                <div class="review_content">
-                  <%= booking.review_content %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-
         </div>
       </div>
     </div>
