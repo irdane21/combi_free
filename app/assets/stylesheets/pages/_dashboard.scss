@@ -1,17 +1,20 @@
 .container {
   padding-top: 60px;
 }
+
 .profil-container {
-  background-color: rgba(228, 166, 0, 0.2);
-  width: 100%;
+  background-color: rgba(228, 166, 0, 0.1);
+  width: 80%;
   border: 1px solid #D3D3D3;
-  height: 300px;
+  height: 150px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   margin: 20px;
   justify-content: space-around;
   position: relative;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .modify-profil {
@@ -26,13 +29,17 @@
 }
 .haut-droit {
   position: absolute;
-  top: 2px;
+  top: 10px;
   right: 10px;
 }
 
 .user-information {
   font-size: 13px;
-  padding-left: 30px;
+  padding-left: 100px;
+}
+
+.no_padding_inline {
+  padding-inline-start: 0px;
 }
 
 .marge-top {
@@ -40,7 +47,7 @@
 }
 
 .reservation-container {
-  background-color: rgba(228, 166, 0, 0.2);
+  background-color: rgba(228, 166, 0, 0.1);
   width: 100%;
   border: 1px solid #D3D3D3;
   height-min: 300px;
@@ -53,36 +60,82 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
+  padding: 20px;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
+  margin: 10px
 }
 
 .booking {
   margin: 80px;
 }
 
+.date {
+  width: 100px;
+  border-right: 2px solid;
+  padding: 20px;
+  border-color: white;
+}
+
+
 .combi-model {
-  width-min: 100px;
+  width: 200px;
+  border-right: 2px solid;
+  padding: 20px;
+  border-color: white;
 }
 
 .combi_price {
-  width-min: 100px;
+  width: 100px;
+  border-right: 2px solid;
+  padding: 20px;
+  border-color: white;
+}
+
+.review-div {
+  width: 200px;
+  padding: 20px;
 }
 
 .state_of_reservation {
   width-min: 100px;
-  border: 1px solid;
-  border-color: orange;
+  flex-grow: 1;
+  color: $orange;
   padding: 20px;
+  border-right: 2px solid;
+  padding: 20px;
+  border-color: white;
 }
 
-
-
 .combi-container {
-  background-color: rgba(228, 166, 0, 0.2);
+  background-color: rgba(228, 166, 0, 0.1);
   width: 100%;
   border: 1px solid #D3D3D3;
   height-min: 300px;
   border-radius: 5px;
   margin: 20px;
   position: relative;
+}
+
+.button-action {
+  width: 250px;
+  padding: 20px;
+}
+.identify-combi {
+  flex-grow: 1;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  padding: 20px;
+  border-color: white;
+  margin: 30px;
+}
+
+.button_edit {
+  width: 200px;
+  padding: 20px;
+}
+
+.combi_image {
+  padding: 20px;
 }
