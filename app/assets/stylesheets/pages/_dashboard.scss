@@ -19,7 +19,7 @@
   background-color: white;
   width: 80%;
   border: 1px solid #D3D3D3;
-  height: 150px;
+  min-height: 150px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -35,6 +35,11 @@
   width: 200px;
 }
 
+.profil_avatar_photo {
+  margin: 30px;
+
+}
+
 .haut-gauche {
   position: absolute;
   top: 10px;
@@ -48,7 +53,6 @@
 
 .user-information {
   font-size: 13px;
-  padding-left: 100px;
 }
 
 .no_padding_inline {
