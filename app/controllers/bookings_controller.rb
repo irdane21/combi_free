@@ -45,9 +45,14 @@ class BookingsController < ApplicationController
     @booking.status = 1
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
     else
-      alert = 'Something went wrong, please retry'
+      respond_to do |format|
+        alert = 'Something went wrong, please retry'
+      end
     end
   end
 
@@ -56,9 +61,14 @@ class BookingsController < ApplicationController
     @booking.status = 2
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
     else
-      alert = 'Something went wrong, please retry'
+      respond_to do |format|
+        alert = 'Something went wrong, please retry'
+      end
     end
   end
 
