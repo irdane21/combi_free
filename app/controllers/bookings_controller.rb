@@ -9,10 +9,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @combi = Combi.find(params[:combi_id])
     @booking.combi = @combi
-    start = @booking.begin_date
-    last = @booking.end_date
-    # @booking.price = ((last - start).to_i * @combi.price )
-    @booking.price = @combi.price
+    start = Date.parse(@booking.begin_date)
+    last = Date.parse(@booking.end_date)
+    @booking.price = ((last - start).to_i * @combi.price )
     @booking.user = current_user
     authorize @booking
     # fail
