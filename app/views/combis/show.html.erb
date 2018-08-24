@@ -28,7 +28,8 @@
           <%= form_tag [@combi, @booking], method: :post do %>
             <input type="date" name="begin_date">
             <input type="date" name="end_date">
-            <%= submit_tag ("Book it NOW!") %>
+            <hr>
+            <%= submit_tag "Book it NOW!", class: "btn btn-success" %>
           <% end %>
         </div>
       </div>
