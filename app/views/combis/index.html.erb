@@ -1,11 +1,13 @@
 <div class="white-wrapper">
   <div class="main-container">
     <div class="content">
-      <div class="research">
-        <%= render '/shared/searchform' %>
-      </div>
       <div class= "cards-container">
         <div class="row">
+          <div class="col-xs-12 col-sm-12 col-lg-12">
+            <div class= "card-research">
+              <%= render '/shared/searchform' %>
+            </div>
+          </div>
           <% @combis.each do |combi| %>
             <div class="col-xs-12 col-sm-6 col-lg-4">
               <%= render 'cards', combi: combi %>
