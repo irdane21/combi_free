@@ -1,7 +1,9 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= combi.photo.present? ? cl_image_path(combi.photo, crop: :fill) : image_path('logo.jpg') %>);">
-  <div class="card-category"><%= combi.model %></div>
-  <div class="card-description">
-    <h4><%= combi.price %></h4>
+<div class="master-card">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= combi.photo.present? ? cl_image_path(combi.photo, crop: :fill) : image_path('logo.jpg') %>);">
+    <div class="card-description">
+      <h5><%= "#{combi.price} €" %></h5>
+    </div>
+    <div class="card-category"><%= combi.model %></div>
+    <%= link_to "", combi_path(combi), class: "card-link"%>
   </div>
-  <%= link_to "", combi_path(combi), class: "card-link"%>
 </div>
