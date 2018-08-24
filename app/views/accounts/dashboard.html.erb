@@ -1,6 +1,9 @@
 <div class="container">
   <div class="profil-container">
-    <h3 class="haut-gauche">User profil:</h3>
+    <div class="profil_avatar_photo">
+      <%= cl_image_tag(current_user.photo,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+    </div>
     <div class="user-information">
       <h4>
          Name :
