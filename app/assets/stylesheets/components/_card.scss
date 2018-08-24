@@ -1,35 +1,44 @@
+.master-card {
+  height: 240px;
+  margin-left: 5px;
+  margin-top: 5px;
+  position: relative;
+  border-bottom: solid #F4F4F4;
+  border-width: 1px;
+  margin-bottom: 10px;
+}
+
 .card {
-  height: 175px;
+  height: 190px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
-  position: relative;
-  margin-top: 10px;
-  margin-left: 5px;
+  color: #3B444D;
   border-radius: 3px;
 }
+
 .card-user {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 5px;
   width: 40px;
   border-radius: 50%;
 }
 .card-category {
   position: absolute;
-  bottom: 10px;
-  right: 5px;
+  bottom: 8px;
+  right: 3px;
   font-size: 15px;
   text-transform: uppercase;
 }
 .card-description {
   position: absolute;
-  bottom: 15px;
+  bottom: 13px;
   right: 5px;
 }
-.card-description h2 {
-  font-size: 24px;
+.card-description h5 {
+  color: #00CA9F;
+  font-size: 20px;
 }
 .card-description p {
   font-size: 14px;

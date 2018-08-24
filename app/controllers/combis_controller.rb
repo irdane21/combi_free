@@ -8,7 +8,8 @@ class CombisController < ApplicationController
     @markers = @combis.map do |combi|
       {
         lat: combi.latitude,
-        lng: combi.longitude#,
+        lng: combi.longitude,
+        icon: "https://static.getjar.com/icon-50x50/78/829805_thm.png"
         # infoWindow: { content: render_to_string(partial: "/combis/map_box", locals: { combi: combi }) }
       }
     end
