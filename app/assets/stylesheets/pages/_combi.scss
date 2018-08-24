@@ -1,10 +1,22 @@
 .reservation_card {
-  background-color: $light-gray;
+  background-color: white;
   text-align: center;
   border-radius: 4px;
   border: solid #F4F4F4;
   border-width: 1px;
   padding: 40px;
+}
+
+.combi_info h4 {
+  color: $red;
+}
+
+.reservation_card h4 {
+  color: $red;
+}
+
+.combi_review h4 {
+  color: $red;
 }
 
 .combi_info {
@@ -25,7 +37,7 @@
 }
 
 .combi_review {
-  background-color: $light-gray;
+  background-color: white;
   text-align: center;
   border-radius: 4px;
   border: solid #F4F4F4;

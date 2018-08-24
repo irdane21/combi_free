@@ -24,25 +24,29 @@
   width: 40px;
   border-radius: 50%;
 }
+
 .card-category {
   position: absolute;
-  bottom: 8px;
+  bottom: 0px;
   right: 3px;
-  font-size: 15px;
   text-transform: uppercase;
 }
+
+.card-category p {
+  font-size: 14px;
+  opacity: 1;
+  font-weight: lighter;
+}
+
 .card-description {
   position: absolute;
-  bottom: 13px;
+  bottom: 18px;
   right: 5px;
 }
-.card-description h5 {
-  color: #00CA9F;
-  font-size: 20px;
-}
+
 .card-description p {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 1;
   font-weight: lighter;
 }
 .card-link {
@@ -55,6 +59,16 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover {
-  opacity: 0.1;
+.card:hover {
+  opacity: 0.8;
+}
+
+.card-research {
+  height: 80px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  border-bottom: solid #F4F4F4;
+  border-width: 2px;
 }

@@ -8,15 +8,15 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8">
         <div class="combi_info">
-          <h3>Model: <%= @combi.model %></h3>
+          <h4>Model: <%= @combi.model %></h4>
           <p><%= @combi.description %></p>
           <p>address: <%= "#{@combi.address} #{@combi.city}" %></p>
-          <h3>Price per day: <%= @combi.price %> €</h3>
+          <h4>Price per day: <%= @combi.price %> €</h4>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="reservation_card">
-          <h3>Combi road trip</h3>
+          <h4>Combi road trip</h4>
           <!-- A modifier avec la recherche-->
           <p>Address:</p>
           <p>
@@ -34,7 +34,7 @@
       </div>
       <div class="col-xs-12 col-sm-8">
         <div class="combi_review">
-          <h3>Reviews:</h3>
+          <h4>Reviews:</h4>
           <ul class="without_deco">
             <% @combi.bookings.each do |booking| %>
               <li class="border_around">
